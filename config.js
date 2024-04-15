@@ -18,7 +18,7 @@ module.exports = {
   BASE_URL: "https://api.alpha-md.rf.gd/",
   REPO: "C-iph3r/alpha-md",
   REJECT_CALL: toBool(process.env.REJECT_CALL || "false"),
-  BADWORD_BLOCK: toBool(process.env.BADWORD_BLOCK || "false"),
+  BADWORD_BLOCK: toBool(process.env.BADWORD_BLOCK || "true"),
   ALWAYS_ONLINE: toBool(process.env.ALWAYS_ONLINE || "true"),
   PM_BLOCK: toBool(process.env.PM_BLOCK || "false"),
   CALL_BLOCK: toBool(process.env.CALL_BLOCK || "false"),
@@ -28,13 +28,13 @@ module.exports = {
   DISABLE_PM: toBool(process.env.DISABLE_PM || "false"),
   DISABLE_GRP: toBool(process.env.DISABLE_GRP || "false"),
   ERROR_MSG: toBool(process.env.ERROR_MSG || "true"),
-  AJOIN: toBool(process.env.AJOIN || "false"),
-  READ: process.env.READ || "false", //true, command
-  REACT: process.env.REACT || "false", //true, command, emoji
+  AJOIN: toBool(process.env.AJOIN || "true"),
+  READ: process.env.READ || "true", //true, command
+  REACT: process.env.REACT || "true", //true, command, emoji
   WARNCOUND: process.env.WARNCOUND || 3,
   BOT_INFO: process.env.BOT_INFO || "Alpha-md;Cipher;https://i.imgur.com/nXqqjPL.jpg",
   WORKTYPE: process.env.WORKTYPE || "public",
-  PREFIX: process.env.PREFIX || "#", //both  .  and [.] equal, for multi prefix we use [] this
+  PREFIX: process.env.PREFIX || ".", //both  .  and [.] equal, for multi prefix we use [] this
   LANG: process.env.LANG || "en",
   PERSONAL_MESSAGE: process.env.PERSONAL_MESSAGE || "null",
   BOT_PRESENCE: process.env.BOT_PRESENCE || "composing", //available , composing, recording, paused 
@@ -55,11 +55,11 @@ module.exports = {
           native: true,
           ssl: { require: true, rejectUnauthorized: false },
         },
-        logging: false,
+        logging: true,
       })
     : new Sequelize({
         dialect: "sqlite",
         storage: "./database.db",
-        logging: false,
+        logging: true,
       }),
 };
