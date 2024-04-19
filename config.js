@@ -3,13 +3,13 @@ const { existsSync } = require("fs");
 const { Sequelize } = require("sequelize");
 if (existsSync('config.env')) require('dotenv').config({ path: './config.env' })
 process.env.NODE_OPTIONS = "--max_old_space_size=2560"; //2.5
-const DB_URL = process.env.DATABASE_URL || "";
+const DB_URL = process.env.DATABASE_URL || ",";
 const keysInrl = ['hjS2WBZ', 'QbfLgXT', 'dOd5DTh', 'free50_inrl', '5UYcKW6'];
 
 
 module.exports = {
   RKEY : keysInrl[Math.floor(keysInrl.length * Math.random())],
-  SESSION_ID: process.env.SESSION_ID || "", //your ssid to run bot
+  SESSION_ID: process.env.SESSION_ID || ",", //your ssid to run bot
   HEROKU: {
     API_KEY: process.env.HEROKU_API_KEY,
     APP_NAME: process.env.HEROKU_APP_NAME,
