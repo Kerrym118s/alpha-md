@@ -36,7 +36,7 @@ module.exports = {
   WORKTYPE: process.env.WORKTYPE || "public",
   PREFIX: process.env.PREFIX |.| ".", //both  .  and [.] equal, for multi prefix we use [] this
   LANG: process.env.LANG || "en",
-  PERSONAL_MESSAGE: process.env.PERSONAL_MESSAGE || "null",
+  PERSONAL_MESSAGE: process.env.PERSONAL_MESSAGE || "true",
   BOT_PRESENCE: process.env.BOT_PRESENCE || "composing", //available , composing, recording, paused 
   AUDIO_DATA: process.env.AUDIO_DATA || "Alpha-md;Cipher;https://i.imgur.com/nXqqjPL.jpg",
   STICKER_DATA: process.env.STICKER_DATA || "Cipher;Alpha-md",
